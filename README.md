@@ -12,7 +12,7 @@ Danny created Foodie-Fi with a data driven mindset and wanted to ensure all futu
 
 # 📊Datasets
 This case study focuses on only 2 tables
-* Table 1: plans
+<* Table 1: plans/>
   Contains the columns as plan_id, plan_name and price 
 * Table 2: subscriptions
   Contains the columns as customer_id, plan_id and start_date
