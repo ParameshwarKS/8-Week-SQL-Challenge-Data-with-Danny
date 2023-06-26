@@ -17,4 +17,9 @@ This case study focuses on only 2 tables
 * Table 2: subscriptions <br>
   Contains the columns as customer_id, plan_id and start_date
 
+# ♻Entity Relationship Diagram
+<p align = "center">
+<img src = "https://user-images.githubusercontent.com/81607668/129744449-37b3229b-80b2-4cce-b8e0-707d7f48dcec.png" width="450" height="200">
+</p>
+
 
