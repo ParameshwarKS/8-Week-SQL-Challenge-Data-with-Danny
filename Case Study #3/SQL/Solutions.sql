@@ -11,21 +11,21 @@ from subscriptions
 where customer_id in (1,2,11,13,15,16,18,19)
 order by customer_id;
 
--- customer 1 has just tried the trial and decided to take the subscription of basic monthly plan
+-- customer 1 has started the trial on 2020-08-01 and decided to take the subscription of basic monthly plan on 2020-08-08 which has been continued till date. 
 
--- customer 2 has tried the trial and chose to continue with the subscription of pro annual plan
+-- customer 2 has started the trial on 2020-09-20 and chose to continue with the subscription of pro annual plan on 2020-09-27 that is being continued till date.
 
--- customer 11 has tried the trial and chose to discontinue with the application
+-- customer 11 has tried the trail for a week from 2020-11-19 to 2020-11-26 and chose to discontinue with the application on 2020-11-26.
 
--- customer 13 has tried the trial and chose the basic monthly plan that has continued for 3 months 7 days and then finally chose to switch to the pro monthly plan.
+-- customer 13 has started the trial on 2020-12-15 and chose the basic monthly plan after the trial period i.e. on 2020-12-22 which has been continued upto 2021-03-29 (97 days) and then finally chose to switch to the pro monthly plan on 2021-03-29 which has been continued till date.
 
--- customer 15 has tried the trial and was by default added into the pro monthly plan that has continued for 1 month 4 days and has finally churned.
+-- customer 15 has started the trial on 2020-03-17 and was by default added into the pro monthly plan on 2020-03-24 that has been continued upto 2020-04-29 (36 days) and has finally churned on 2020-04-29.
 
--- customer 16 has tried the trial and chose the basic monthly plan that has continued for 4 months 14 days and then finally chose to switch to the pro annual plan.
+-- customer 16 has started the trial on 2020-05-31 and chose the basic monthly plan on 2020-06-07 that has continued upto 2020-10-21 (136 days) and then finally chose to switch to the pro annual plan on 2020-07-13 which has been continued till date.
 
--- customer 18 has tried the trial and was by default added into the pro monthly plan that is still being continued
+-- customer 18 has started the trial on 2020-07-06 and was by default added into the pro monthly plan on 2020-07-13 that is still being continued till date.
 
--- customer 16 has tried the trial and was moved to pro monthly plan plan that has been continued for 2 months and then finally switched to the pro annual plan.
+-- customer 19 has started the trial on 2020-06-29 and was moved to pro monthly plan plan on 2020-06-29 that has been continued upto 2020-08-29 (61 days) and then finally switched to the pro annual plan which is been continued till date.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
