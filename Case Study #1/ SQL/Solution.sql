@@ -74,7 +74,7 @@ from
 	select s.customer_id, s.product_id, s.order_date, dense_rank() over(partition by s.customer_id order by s.order_date desc) as rk
 	from sales as s
 	join members as m
-	on s.customer_id = m.customer_id and s.order_date<=m.join_date
+	on s.customer_id = m.customer_id and s.order_date<m.join_date
 ) as t join
 menu
 on menu.product_id=t.product_id
