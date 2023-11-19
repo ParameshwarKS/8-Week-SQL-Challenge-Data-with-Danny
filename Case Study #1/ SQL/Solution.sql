@@ -71,10 +71,10 @@ order by 1;
 select t.customer_id, menu.product_name as order_just_before_becoming_member
 from 
 (
-	select s.customer_id, s.product_id, s.order_date, dense_rank() over(partition by s.customer_id order by s.order_date desc) as rk
+	select s.customer_id, s.product_id, s.order_date, row_number() over(partition by s.customer_id order by s.order_date desc) as rk
 	from sales as s
-	join members as m
-	on s.customer_id = m.customer_id and s.order_date<m.join_date
+	left join members as m
+	on (s.customer_id = m.customer_id and s.order_date<m.join_date) or m.join_date is NULL
 ) as t join
 menu
 on menu.product_id=t.product_id
