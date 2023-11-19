@@ -50,6 +50,7 @@ from
   order by 1,2
 ) as t
 where r=1;
+
 --6)
 
 select t.customer_id, menu.product_name as first_order_name
