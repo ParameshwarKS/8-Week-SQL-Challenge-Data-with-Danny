@@ -11,7 +11,7 @@ order by 1;
 
 -- 2)
 
-select customer_id, count(*) as number_of_visits
+select customer_id, count(distinct order_date) as number_of_visits
 from sales
 group by customer_id
 order by 1;
