@@ -39,13 +39,17 @@ order by 2 desc;
 
 --5)
 
-select s.customer_id, m.product_name, count(*) as no_of_purchases
-from sales as s
-join menu as m
-on s.product_id = m.product_id
-group by s.customer_id, m.product_name
-order by 1,2;
-
+select customer_id, product_name
+from 
+(
+  select s.customer_id, m.product_name, count(*) as no_of_purchases, rank() over(partition by s.customer_id order by count(*) desc) as r
+  from sales as s
+  join menu as m
+  on s.product_id = m.product_id
+  group by s.customer_id, m.product_name
+  order by 1,2
+) as t
+where r=1;
 --6)
 
 select t.customer_id, menu.product_name as first_order_name
