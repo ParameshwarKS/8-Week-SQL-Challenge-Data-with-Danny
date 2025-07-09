@@ -29,3 +29,7 @@ Due to privacy concerns, Danny has provided only a sample of his overall custome
 Below is the entity relationship diagram that is prepared from the data given:
 </p>
 
+<p align="center">
+  <img src="Case%20Study%20#1/ERD_Challenge1.JPG" alt="ER Diagram" width="600">
+</p>
+
