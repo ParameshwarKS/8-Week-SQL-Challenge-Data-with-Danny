@@ -1,7 +1,8 @@
 
 SET search_path = dannys_diner;
 
--- 1)
+-- 1) What is the total amount each customer spent at the restaurant?
+
 select customer_id, sum(price) as total_spendings
 from sales as s
 join menu as m
@@ -9,14 +10,14 @@ on s.product_id = m.product_id
 group by customer_id
 order by 1;
 
--- 2)
+-- 2) How many days has each customer visited the restaurant?
 
 select customer_id, count(distinct order_date) as number_of_visits
 from sales
 group by customer_id
 order by 1;
 
---3)
+--3) What was the first item from the menu purchased by each customer?
 
 select customer_id, product_name
 from 
@@ -28,7 +29,7 @@ from
 ) as x
  where rk=1;
 
---4)
+--4) What is the most purchased item on the menu and how many times was it purchased by all customers?
 
 select product_name, count(*) as no_of_purchases
 from sales as s
@@ -37,7 +38,7 @@ on s.product_id = m.product_id
 group by product_name
 order by 2 desc;
 
---5)
+--5) Which item was the most popular for each customer?
 
 select customer_id, product_name
 from 
@@ -51,7 +52,7 @@ from
 ) as t
 where r=1;
 
---6)
+--6) Which item was purchased first by the customer after they became a member?
 
 select t.customer_id, menu.product_name as first_order_name
 from 
@@ -66,7 +67,7 @@ on menu.product_id=t.product_id
 where rk=1
 order by 1;
 
---7)
+--7) Which item was purchased just before the customer became a member?
 
 select t.customer_id, menu.product_name as order_just_before_becoming_member
 from 
@@ -81,7 +82,7 @@ on menu.product_id=t.product_id
 where rk=1
 order by 1;
 
---8)
+--8) What is the total items and amount spent for each member before they became a member?
 
 select customer_id, sum(price) as total_spending_before_joining
 from
@@ -97,7 +98,7 @@ from
 group by customer_id
 order by 1;
 
---9)
+--9) If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 
 with cte as 
 (
@@ -116,7 +117,7 @@ on cte.product_id = s.product_id
 group by customer_id
 order by 1;
 
---10)
+--10) In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
 
 select customer_id, sum(points) as total_points
 from
@@ -135,7 +136,7 @@ from
 group by 1;
 
 
-Bonus Questions:
+-- Bonus Questions:
 
 select s.customer_id, s.order_date, m.product_name, m.price, 
 case
