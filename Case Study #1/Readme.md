@@ -30,6 +30,6 @@ Below is the entity relationship diagram that is prepared from the data given:
 </p>
 
 <p align="center">
-  <img src="Case%20Study%20#1/ERD_Challenge1.JPG" alt="ER Diagram" width="600">
+  <img src="https://github.com/ParameshwarKS/8-Week-SQL-Challenge-Data-with-Danny/blob/2b2527ead7881ba49bf0e7eaa4f46bbae980e937/Case%20Study%20%231/ERD_Challenge1.JPG" alt="ER Diagram" width="600">
 </p>
 
