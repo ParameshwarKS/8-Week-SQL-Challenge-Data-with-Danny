@@ -629,21 +629,21 @@ on r.order_id = cte.order_id;
 
 --5)
 
--- select sum(pizza_charge+delivery_charge) as total_revenue
--- from
--- (
---   select t.order_id, sum(case when pizza_name = 'Meatlovers' then 12 when pizza_name = 'Vegetarian' then 10 end) as pizza_charge, 0.3*distance::numeric as delivery_charge
---   from
---   (
---     select order_id, pizza_number, pizza_name
---     from customer_orders as c
---     join pizza_names as n
---     on c.pizza_id = n.pizza_id
---     where c.order_id in (select order_id from runner_orders where cancellation not like'%Cancellation' or cancellation is null)
---     group by 1,2,3
---     order by 1,2,3
---   ) as t
---   join runner_orders as r
---   on t.order_id = r.order_id
---   group by 1, r.distance
--- ) as x;
+select sum(pizza_charge+delivery_charge) as total_revenue
+from
+(
+  select t.order_id, sum(case when pizza_name = 'Meatlovers' then 12 when pizza_name = 'Vegetarian' then 10 end) as pizza_charge, 0.3*distance::numeric as delivery_charge
+  from
+  (
+    select order_id, pizza_number, pizza_name
+    from customer_orders as c
+    join pizza_names as n
+    on c.pizza_id = n.pizza_id
+    where c.order_id in (select order_id from runner_orders where cancellation not like'%Cancellation' or cancellation is null)
+    group by 1,2,3
+    order by 1,2,3
+  ) as t
+  join runner_orders as r
+  on t.order_id = r.order_id
+  group by 1, r.distance
+) as x;
