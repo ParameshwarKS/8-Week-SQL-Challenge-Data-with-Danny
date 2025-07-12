@@ -1,5 +1,7 @@
 SET search_path = data_bank;
 
+--part A
+
 --1)
 
 select count(distinct node_id) as no_of_unique_nodes
