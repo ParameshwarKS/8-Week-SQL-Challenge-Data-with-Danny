@@ -189,6 +189,8 @@ with cte as
 select category_name, 100*revenue_with_discount/(select sum(revenue_with_discount) from cte) as percent_of_split
 from cte;
 
+--9)
+
 with cte as
 (
   select count(distinct txn_id) as tot_txns
